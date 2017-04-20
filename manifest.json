@@ -1,0 +1,73 @@
+{
+  "manifest_version": 2,
+
+  "name": "HeartBank®",
+  "author": "Thon Ly",
+  "description": "Thank with HeartBank",
+  "version": "0.0.2",
+  "default_locale": "en",
+  "offline_enabled": false,
+
+  "icons": {
+    "16": "icons/hb16.png",
+    "48": "icons/hb48.png",
+    "128": "icons/hb128.png"
+  },
+
+  "omnibox": {
+    "keyword" : "hb"
+  },
+
+  "browser_action": {
+    "default_icon": "icons/heartbank.png",
+    "default_popup": "omnibox/heartbank.html",
+    "default_title": "Family Bank"
+  },
+
+  "background": {
+    "scripts": ["heartbank.js"],
+    "persistent": false
+  },
+
+  "options_page": "pages/heartbank.html",
+
+  "options_ui": {
+    "page": "omnibox/login.html",
+    "chrome_style": false
+  },
+
+  "tts_engine": {
+    "voices": [{
+      "voice_name": "Alice",
+      "lang": "en-US",
+      "gender": "female",
+      "event_types": ["start", "marker", "end"]
+    }]
+  },
+
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+
+  "web_accessible_resources": [
+    "icons/*",
+    "omnibox/*",
+    "pages/*",
+    "_locales/*"
+  ],
+
+  "permissions": [
+    "tabs",
+    "alarms",
+    "cookies",
+    "geolocation",
+    "notifications",
+    "storage",
+    "unlimitedStorage",
+    "ttsEngine",
+    "*://*/*"
+  ],
+
+  "optional_permissions": [
+    "activeTab",
+    "webRequest"
+  ]
+}
