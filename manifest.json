@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
 
-  "name": "HeartBank®",
-  "author": "Thon Ly",
-  "description": "Thank with HeartBank",
-  "version": "0.0.2",
+  "name": "Kim Hudson Jewelry",
+  "author": "Kim Hudson LLC",
+  "description": "Engrave anything on Amazon",
+  "version": "0.0.1",
   "default_locale": "en",
   "offline_enabled": false,
 
@@ -14,43 +14,37 @@
     "128": "icons/hb128.png"
   },
 
-  "omnibox": {
-    "keyword" : "hb"
-  },
-
   "browser_action": {
     "default_icon": "icons/heartbank.png",
-    "default_popup": "omnibox/heartbank.html",
-    "default_title": "Family Bank"
+    "default_popup": "cart/cart.html",
+    "default_title": "Kim Hudson Jewelry"
   },
 
   "background": {
-    "scripts": ["heartbank.js"],
+    "scripts": ["background.js"],
     "persistent": false
   },
 
-  "options_page": "pages/heartbank.html",
+  "options_page": "options/options.html",
 
   "options_ui": {
-    "page": "omnibox/login.html",
+    "page": "options/options.html",
     "chrome_style": false
   },
 
-  "tts_engine": {
-    "voices": [{
-      "voice_name": "Alice",
-      "lang": "en-US",
-      "gender": "female",
-      "event_types": ["start", "marker", "end"]
-    }]
-  },
+  "content_scripts": [{
+    "css": ["amazon/cart.css"],
+    "js": ["amazon/cart.js"],
+    "matches": ["https://www.amazon.com/*"]
+  }],
 
   "content_security_policy": "script-src 'self'; object-src 'self'",
 
   "web_accessible_resources": [
     "icons/*",
-    "omnibox/*",
-    "pages/*",
+    "options/*",
+    "cart/*",
+    "checkout/*",
     "_locales/*"
   ],
 
@@ -62,7 +56,6 @@
     "notifications",
     "storage",
     "unlimitedStorage",
-    "ttsEngine",
     "*://*/*"
   ],
 
