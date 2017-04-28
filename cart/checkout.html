@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Kim Hudson Jewelry</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<style>
+			body {
+				margin: 1em;
+			}
+		</style>
+		</head>
+	<body>
+		<form action="http://localhost:9080/amazon" method="get">
+			<div class="form-group">
+				<label for="asin">ASIN</label>
+				<input type="text" class="form-control" id="asin" placeholder="ASIN" name="asin">
+			</div>
+			<div class="form-group">
+				<label for="amount">Amount</label>
+				<input type="number" class="form-control" id="amount" placeholder="Amount" min="0" step="0.01" name="amount">
+			</div>
+			<div class="form-group">
+				<label for="quantity">Quantity</label>
+				<input type="number" class="form-control" id="quantity" placeholder="Quantity" min="0" step="1" name="quantity">
+			</div>
+			<div class="form-group">
+				<label for="note">Message</label>
+				<input type="text" class="form-control" id="note" placeholder="Message" name="note" maxlength="32">
+			</div>
+			<button type="submit" class="btn btn-outline-primary btn-lg btn-block">Checkout</button>
+		</form>
+    	<a href="checkout.html" target="_blank">Debug</a>
+    <script src="checkout.js"></script>
+	</body>
+</html>

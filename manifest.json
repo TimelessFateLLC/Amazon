@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Kim Hudson Jewelry",
-  "author": "Kim Hudson LLC",
+  "author": "HeartBank®",
   "description": "Engrave anything on Amazon",
   "version": "0.0.1",
   "default_locale": "en",
@@ -16,7 +16,7 @@
 
   "browser_action": {
     "default_icon": "icons/heartbank.png",
-    "default_popup": "cart/cart.html",
+    "default_popup": "cart/checkout.html",
     "default_title": "Kim Hudson Jewelry"
   },
 
@@ -35,7 +35,7 @@
   "content_scripts": [{
     "css": ["amazon/cart.css"],
     "js": ["amazon/cart.js"],
-    "matches": ["https://www.amazon.com/*"]
+    "matches": ["https://www.amazon.com/*", "https://smile.amazon.com/*"]
   }],
 
   "content_security_policy": "script-src 'self'; object-src 'self'",
@@ -44,7 +44,6 @@
     "icons/*",
     "options/*",
     "cart/*",
-    "checkout/*",
     "_locales/*"
   ],
 
